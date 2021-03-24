@@ -1,0 +1,37 @@
+<%- include("partials/header") %>
+
+    <div class="ui container" style="margin-top: 5rem;">
+        <h2 class="ui center aligned icon header">
+            <i class="circular home icon"></i> Welcome to index page
+        </h2>
+
+        <div class="ui celled grid">
+            <div class="row">
+                <% blogs.forEach(function(blog){ %>
+                    <div class="four wide column">
+                        <img src="<%= blog.image %>">
+                    </div>
+                    <div class="twelve wide column">
+                        <h1 class="ui header">
+                            <%= blog.title %>
+                        </h1>
+                        <p class="ui text">
+                            <%= blog.body.substring(0,200) %>......
+                        </p>
+                        <span> <%= blog.created %> </span>
+                        <div class="extra">
+                            <a href="/blogs/<%= blog._id %>" class="ui button">
+                                <i class="file icon"></i> Full info
+                            </a>
+                            <a href="/blogs/<%= blog._id %>/edit" class="ui button">
+                                <i class="edit icon"></i> Edit Blog
+                            </a>
+                        </div>
+
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>

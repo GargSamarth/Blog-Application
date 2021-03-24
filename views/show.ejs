@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+    <div class="ui container" style="margin-top: 5rem;">
+        <div class="ui inverted segment">
+            <img src="<%= blog.image %>" alt="" width="300px" height="300px" style="object-fit: contain;">
+            <div class="ui inverted divider"></div>
+            <p>
+                <%= blog.body %>
+            </p>
+            <p>
+                <%= blog.created.toDateString() %>
+            </p>
+            <p>
+                <%= blog.created.toTimeString() %>
+            </p>
+            <p>
+                <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                    <button class="ui button red" type="submit">Delete</button>
+                </form>
+            </p>
+            <h4 class="ui horizontal inverted divider">
+                <%= blog.title %>
+            </h4>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>

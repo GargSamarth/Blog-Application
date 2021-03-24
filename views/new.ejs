@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+
+
+    <div class="ui container" style="margin-top: 5rem; border: 0.5px solid black; padding: 20px;">
+        <form class="ui form" action="/blogs" method="POST">
+            <div class="field">
+                <label>Title</label>
+                <input type="text" name="blog[title]" placeholder="title">
+            </div>
+            <div class="field">
+                <label>Image</label>
+                <input type="text" name="blog[image]" placeholder="Image">
+            </div>
+            <div class="field">
+                <label>Description</label>
+                <textarea name="blog[body]" placeholder="Body" cols="30" rows="10"></textarea>
+                <!-- <input type="text" name="blog[body]" placeholder="Body"> -->
+            </div>
+            <button class="ui button" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <%- include("partials/footer") %>
